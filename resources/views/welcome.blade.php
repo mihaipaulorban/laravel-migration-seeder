@@ -10,19 +10,10 @@
     <title>Laravel Template</title>
 </head>
 <body class="d-flex vh-100 justify-content-center align-items-center">
-    <div class="container text-center">
-        <div>
-            <h1 class="display-1">Template Laravel</h1>
-        </div>
-        <div>
-            <h2>Bentornato Paul!</h2>
-        </div>
-    </div>
-
-    {{-- Questa é la sintassi per includere immagini dopo la compressione di vite --}}
-
-    {{-- <img src="{{ Vite::asset ('resources/img/logo-png') }}" alt=""> --}}
-    
+    @foreach($trains as $train)
+    <p>{{ $train->company }} - Partenza: {{ $train->departure_time }}</p>
+@endforeach
+      
 </body>
 
 </html>
