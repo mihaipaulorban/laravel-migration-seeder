@@ -9,7 +9,13 @@
     @vite ('resources/js/app.js')
     <title>Laravel Template</title>
 </head>
-<body class="d-flex vh-100 justify-content-center align-items-center">
+<body class="d-flex flex-column vh-100 justify-content-center align-items-center">
+    {{-- HEADER --}}
+    <header class="bg-primary text-white text-center py-3 w-100">
+        <h1>TrainInfo</h1>
+    </header>
+
+    {{-- CARD CON I TRENI --}}
     <div class="container mt-5">
         <div class="row justify-content-center">
             @foreach ($trains as $train)
@@ -33,6 +39,11 @@
             @endforeach
         </div>
     </div>
+
+    {{-- FOOTER --}}
+    <footer class="bg-primary text-white text-center py-3 w-100">
+        <p>&copy; 2024 TrainInfo. Tutti i diritti riservati.</p>
+    </footer>
 
       
 </body>
