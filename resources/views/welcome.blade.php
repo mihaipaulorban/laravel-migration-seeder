@@ -10,9 +10,30 @@
     <title>Laravel Template</title>
 </head>
 <body class="d-flex vh-100 justify-content-center align-items-center">
-    @foreach($trains as $train)
-    <p>{{ $train->company }} - Partenza: {{ $train->departure_time }}</p>
-@endforeach
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            @foreach ($trains as $train)
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="{{ $train->image_url }}" class="card-img-top" alt="Immagine Città">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{ $train->company }} - Treno {{ $train->train_code }}</h5>
+                            <p class="card-text">
+                                Partenza: {{ $train->departure_station }} <br>
+                                Arrivo: {{ $train->arrival_station }} <br>
+                                Orario di partenza: {{ $train->departure_time }} <br>
+                                Orario di arrivo: {{ $train->arrival_time }} <br>
+                                Carrozze: {{ $train->carriages }} <br>
+                                Stato: {{ $train->on_time ? 'In orario' : 'Ritardo' }} <br>
+                                {{ $train->cancelled ? 'Cancellato' : '' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
       
 </body>
 
